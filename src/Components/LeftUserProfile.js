@@ -32,6 +32,9 @@ const LeftUserProfile = () => {
                     <i className="fas fa-bookmark"></i>
                     <span>My items</span>
                 </div>
+                <div className="wrapper-b">
+                    <a href="/logout">Logout</a>
+                </div>
             </div>
         </div>
     )

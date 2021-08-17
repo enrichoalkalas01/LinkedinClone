@@ -1,9 +1,6 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { selectUser } from './App/userSlice'
 
 const ListPost = (props) => {
-    const user = useSelector(selectUser)
     return(
         <div className="wrapper-box-list">
 

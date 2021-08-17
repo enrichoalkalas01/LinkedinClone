@@ -17,12 +17,10 @@ import Headers from './Components/Headers'
 import ContentBox from './Components/ContentBox'
 import Login from './Components/Login'
 import Register from './Components/Register';
+import Logout from './Components/Logout'
 
 const App = () => {
     const user = useSelector(selectUser)
-    useEffect(() => {
-        console.log(user)
-    }, [])
 
     return(
         <section id="app">
@@ -38,6 +36,7 @@ const App = () => {
                                     user !== null ? ContentBox : Login
                                 } />
                                 <Route exact path="/register" component={ Register } />
+                                <Route exact path="/logout" component={ Logout } />
                                 <Route exact path="*" component={ () => { window.location.href = "/" } } />
                             </Switch> 
                         </Router>
