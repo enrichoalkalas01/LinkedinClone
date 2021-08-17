@@ -1,12 +1,15 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { selectUser } from './App/userSlice'
 
 const ListPost = (props) => {
+    const user = useSelector(selectUser)
     return(
         <div className="wrapper-box-list">
 
             <div className="profile-box">
                 <div className="photo-box">
-                    <div className="images"></div>
+                    <div className="images" style={{ backgroundImage: `url('${ props.photoUrl }')` }}></div>
                 </div>
                 <div className="title-box">
                     <span className="title">{ props.name }</span>

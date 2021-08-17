@@ -29,7 +29,7 @@ body {
       align-items: center;
       border-radius: 5px; }
       #headers .wrapper-headers .wrapper-container .left-box .box-search-h i {
-        margin-right: 10px; }
+        margin-right: 5%; }
       #headers .wrapper-headers .wrapper-container .left-box .box-search-h input {
         width: 100%;
         background-color: #dedede;
@@ -71,7 +71,11 @@ body {
         margin-right: 15px; }
         #middle-box .wrapper-posting .box-top .wrapper-box-top .icon-box .images-profile {
           width: 50px;
-          height: 50px; }
+          height: 50px;
+          border-radius: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%; }
       #middle-box .wrapper-posting .box-top .wrapper-box-top input {
         width: 90%;
         outline: none;
@@ -102,6 +106,14 @@ body {
         background-color: #dedede;
         margin-right: 10px;
         border-radius: 5px; }
+        #middle-box .wrapper-list-posting .wrapper-box-list .profile-box .photo-box .images {
+          width: 100%;
+          height: 100%;
+          background-color: #dedede;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          border-radius: 5px; }
       #middle-box .wrapper-list-posting .wrapper-box-list .profile-box .title-box {
         display: flex;
         flex-direction: column; }
@@ -149,6 +161,9 @@ body {
         width: 100px;
         height: 100px;
         background-color: #dedede;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
         border-radius: 50%;
         position: absolute;
         top: 50%;
@@ -237,6 +252,9 @@ body {
             width: 50px;
             height: 50px;
             background-color: #dedede;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
             border-radius: 50%; }
         #right-box .wrapper-friends-feed .wrapper-p-f-a .wrapper-profile .title-box {
           width: 100%;
@@ -260,5 +278,56 @@ body {
           border: 1px solid rgba(25, 25, 25, 0.5); }
           #right-box .wrapper-friends-feed .wrapper-p-f-a .button-box button i {
             margin-right: 5px; }
+
+#login {
+  width: 100%;
+  height: calc(100vh - 10vh);
+  background-color: #fff;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #login .wrapper-login {
+    padding: 5%;
+    background-color: #fff;
+    border: 1px solid rgba(25, 25, 25, 0.5);
+    box-shadow: 3px 3px 10px rgba(25, 25, 25, 0.3);
+    border-radius: 15px; }
+    #login .wrapper-login .form .wrapper-box-login {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px; }
+      #login .wrapper-login .form .wrapper-box-login.logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px; }
+        #login .wrapper-login .form .wrapper-box-login.logo span {
+          margin-right: 5px;
+          font-weight: 700;
+          color: rgba(25, 25, 25, 0.7); }
+        #login .wrapper-login .form .wrapper-box-login.logo i {
+          color: #5aa1bd;
+          text-shadow: 3px 3px 10px rgba(90, 161, 189, 0.15); }
+      #login .wrapper-login .form .wrapper-box-login label {
+        font-size: 18px;
+        margin-bottom: 5px; }
+      #login .wrapper-login .form .wrapper-box-login input {
+        border-radius: 15px;
+        outline: none;
+        padding: 15px 25px;
+        border: 1px solid rgba(25, 25, 25, 0.5); }
+      #login .wrapper-login .form .wrapper-box-login button {
+        outline: none;
+        border: 1px solid rgba(25, 25, 25, 0.1);
+        padding: 15px 25px;
+        border-radius: 15px;
+        background-color: #5aa1bd;
+        color: #fff;
+        font-weight: 700;
+        box-shadow: 3px 3px 15px rgba(25, 25, 25, 0.35); }
 
 /*# sourceMappingURL=style.css.map */

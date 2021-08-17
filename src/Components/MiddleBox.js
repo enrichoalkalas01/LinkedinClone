@@ -1,12 +1,16 @@
 import { React, useEffect, useState } from 'react'
 import firebase from 'firebase'
-import { db } from './Firebase'
+import { db } from './App/Firebase'
+import { useSelector } from 'react-redux'
+import { selectUser } from './App/userSlice'
 
 // Components
 import ListPost from './ListPost'
 
 const MiddleBox = () => {
     const [posts, setPosts] = useState([])
+    const user = useSelector(selectUser)
+    console.log(user)
 
     useEffect(() => {
         db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
@@ -22,10 +26,11 @@ const MiddleBox = () => {
     const sendPosts = (e) => {
         if ( e.key === 'Enter' ) {
             db.collection('posts').add({
-                name: 'Enricho Alkalas',
-                description: 'this is a test',
+                uid: user.uid,
+                name: user.displayName,
+                description: `Created from user ${ user.displayName }`,
                 message: e.target.value,
-                photoUrl: '',
+                photoUrl: user.photoUrl,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp()
             })
 
@@ -39,7 +44,7 @@ const MiddleBox = () => {
                 <div className="box-top">
                     <div className="wrapper-box-top">
                         <div className="icon-box">
-                            <div className="images-profile"></div>
+                            <div className="images-profile" style={{ backgroundImage: `url('${ user ? user.photoUrl : null }')` }}></div>
                         </div>
                         <input type="text" placeholder="Start a post" id="posts-input" onKeyDown={ sendPosts } />
                     </div>
@@ -66,18 +71,17 @@ const MiddleBox = () => {
             <div className="col-12 wrapper-list-posting">
                 {
                     posts.map((data, index) => {
+                        console.log(data)
                         return(
                             <ListPost
                                 key={ index }
                                 name={ data.data.name }
                                 message={ data.data.message }
+                                photoUrl={ data.data.photoUrl }
                             />
                         )    
                     })
                 }
-                {/* <ListPost />
-                <ListPost />
-                <ListPost /> */}
             </div>
         </section>
     )
